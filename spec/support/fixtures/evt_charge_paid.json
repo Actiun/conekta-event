@@ -1,0 +1,49 @@
+{
+  "data": {
+    "object": {
+      "id": "5511d4ce2412294cf6000081",
+      "livemode": false,
+      "created_at": 1427231950,
+      "status": "paid",
+      "currency": "MXN",
+      "description": "Stogies",
+      "failure_code": null,
+      "failure_message": null,
+      "monthly_installments": null,
+      "object": "charge",
+      "amount": 20000,
+      "paid_at": 1427231952,
+      "fee": 963,
+      "customer_id": "",
+      "refunds": [],
+      "payment_method": {
+        "name": "Jorge Lopez",
+        "exp_month": "12",
+        "exp_year": "19",
+        "auth_code": "000000",
+        "object": "card_payment",
+        "last4": "4242",
+        "brand": "visa"
+      }
+    },
+    "previous_attributes": {
+      "payment_method": {}
+    }
+  },
+  "livemode": false,
+  "webhook_status": "pending",
+  "id": "5511d4d02412294cf6000088",
+  "object": "event",
+  "type": "charge.paid",
+  "created_at": 1427231952,
+  "webhook_logs": [
+    {
+      "id": "webhl_m5kgkhmgETe6Y4s",
+      "url": "http://requestb.in/1em0jsx1",
+      "failed_attempts": 0,
+      "last_http_response_status": -1,
+      "object": "webhook_log",
+      "last_attempted_at": 0
+    }
+  ]
+}

@@ -9,15 +9,18 @@ Gem::Specification.new do |s|
   s.version     = ConektaEvent::VERSION
   s.authors     = ["Jorge Najera"]
   s.email       = ["jorge.najera.t@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ConektaEvent."
-  s.description = "TODO: Description of ConektaEvent."
+  # s.homepage    = "TODO"
+  s.summary     = "Conekta webhook integration for Rails applications."
+  s.description = "Conekta webhook integration for Rails applications."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files         = `git ls-files`.split("\n")
+   s.test_files    = `git ls-files -- test/*`.split("\n")
 
-  s.add_dependency "rails", "~> 4.2.5"
+  s.add_dependency "activesupport", ">= 4.2.5"
+  s.add_dependency "conekta", ">= 2.0.0"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec-rails", ">= 3.5"
+  s.add_development_dependency "webmock"
+  # s.add_development_dependency "appraisal"
 end
