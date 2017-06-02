@@ -74,6 +74,23 @@ end
 
 ConektaEvent automatically fetches events from Conekta to ensure they haven't been forged. However, that doesn't prevent an attacker who knows your endpoint name and an event's ID from forcing your server to process a legitimate event twice. If that event triggers some useful action, like generating a license key or enabling a delinquent account, you could end up giving something the attacker is supposed to pay for away for free.
 
+To prevent this, ConektEvent supports verification by signature on your webhook endpoint, this helps us to validate that data were not sent by a third-party.  Here's what you do for use this feature:
+
+1.  First need to retrieve your endpoint’s secret in your Conekta Dashboard so Conekta start to sign each webhook sent to the endpoint.
+2. Arrange for a secret key to be available in your application's environment variables or `secrets.yml` file. You can generate a suitable secret with the `rake secret` command. (Remember, the `secrets.yml` file shouldn't contain production secrets directly; it should use ERB to include them.)
+
+3. Configure ConektaEvent to require that secret be used as a basic authentication password, using code along the lines of these examples:
+
+    ```ruby
+    # CONEKTA_PRIVATE_SIGNATURE environment variable
+    ConektaEvent.private_signature = ENV['CONEKTA_PRIVATE_SIGNATURE']
+    # stripe_webhook_secret key in secrets.yml file
+    ConektaEvent.private_signature = Rails.application.secrets.conekta_private_signature
+    ```
+
+4. You are done!
+
+Remember to add an extra layer of protection and secure your webhook endpoint with SSL.
 
 ## Configuration
 
@@ -104,7 +121,7 @@ require 'spec_helper'
 
 describe "Billing Events" do
   def stub_event(fixture_id, status = 200)
-    stub_request(:get, "https://api.stripe.com/v1/events/#{fixture_id}").
+    stub_request(:get, "https://api.conekta.io/events/#{fixture_id}").
       to_return(status: status, body: File.read("spec/support/fixtures/#{fixture_id}.json"))
   end
 
@@ -129,3 +146,11 @@ This button sends an example event to your webhook urls, including a random `id`
 ### Maintainers
 
 * [Jorge Najera](https://github.com/jNajera)
+
+### Versioning
+
+Semantic Versioning 2.0 as defined at <http://semver.org>.
+
+### License
+
+[MIT License](https://github.com/Actiun/conkecta-event/blob/master/MIT-LICENSE).
