@@ -1,4 +1,5 @@
 require 'webmock/rspec'
+require 'byebug'
 
 RSpec.configure do |config|
   config.order = 'random'
