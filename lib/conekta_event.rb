@@ -4,7 +4,7 @@ require "conekta_event/engine" if defined?(Rails)
 
 module ConektaEvent
   class << self
-    attr_accessor :adapter, :backend, :event_retriever, :namespace, :authentication_secret
+    attr_accessor :adapter, :backend, :event_retriever, :namespace, :private_signature
 
     def configure(&block)
       raise ArgumentError, "must provide a block" unless block_given?
