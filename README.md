@@ -1,4 +1,7 @@
 # ConektaEvent
+
+[![Gem Version](https://badge.fury.io/rb/conekta_event.svg)](https://badge.fury.io/rb/conekta_event)
+
 ConketaEvent is built on the [ActiveSupport::Notifications API](http://api.rubyonrails.org/classes/ActiveSupport/Notifications.html). Incoming webhook requests are authenticated by [retrieving the event object](https://developers.conekta.com/api#events) from Conketa. Define subscribers to handle specific event types. Subscribers can be a block or an object that responds to `#call`.
 
 This gem is based on [StripeEvent](https://github.com/integrallis/stripe_event) by [Ryan McGeary](https://github.com/rmm5t) , [Pete Keen](https://github.com/peterkeen) and [Danny Whalen](https://github.com/invisiblefunnel) . ConektaEvent improves on the gem, updating for Rails 4,  using [Conekta](https://www.conekta.com/en)  as Payment Gateway.
