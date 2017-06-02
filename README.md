@@ -84,7 +84,7 @@ To prevent this, ConektEvent supports verification by signature on your webhook 
     ```ruby
     # CONEKTA_PRIVATE_SIGNATURE environment variable
     ConektaEvent.private_signature = ENV['CONEKTA_PRIVATE_SIGNATURE']
-    # stripe_webhook_secret key in secrets.yml file
+    # conekta_private_signature key in secrets.yml file
     ConektaEvent.private_signature = Rails.application.secrets.conekta_private_signature
     ```
 
