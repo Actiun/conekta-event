@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ConektaEvent::VERSION
   s.authors     = ["Jorge Najera"]
   s.email       = ["jorge.najera.t@gmail.com"]
-  s.homepage    = "https://github.com/Actiun/conkecta-event"
+  s.homepage    = "https://github.com/Actiun/conekta-event"
   s.summary     = "Conekta webhook integration for Rails applications."
   s.description = "Conekta webhook integration for Rails applications."
   s.license     = "MIT"
