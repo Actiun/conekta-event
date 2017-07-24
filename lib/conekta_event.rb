@@ -27,8 +27,8 @@ module ConektaEvent
       rescue Conekta::Error => e
         raise UnauthorizedError.new(e)
       end
-
-      backend.instrument namespace.call(event[:type]), event if event
+      
+      backend.instrument namespace.call(event.type), event if event
     end
 
     def subscribe(name, callable = Proc.new)
