@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files         = `git ls-files`.split("\n")
-   s.test_files    = `git ls-files -- test/*`.split("\n")
+  s.test_files    = `git ls-files -- test/*`.split("\n")
 
   s.add_dependency "activesupport", ">= 4.2.5"
   s.add_dependency "conekta", ">= 2.0.0"
